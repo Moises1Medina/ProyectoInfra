@@ -4,10 +4,11 @@ Este proyecto es una aplicación de subasta dividida en una API REST para el bac
 
 ## Creadores
 
-- **Ceballos - 2259619**: Desarrollador del backend y responsable de la integración de Docker Swarm.
-- **Gente que no hizo nada:**
-   - **Nicolas Gutierrez -2259515**
-   - **Cristian leonardo - 2019**
+- **Miguel Angel Ceballos         - 2259619**
+- **Cristian leonardo             - 1968253**
+- **Moisés Medina Villa           - 2459709**
+- **Nicolas Gutierrez             - 2259515**
+- **Karen Jhulieth Grijalba Ortiz - 2259623**
 
 
 
@@ -20,9 +21,10 @@ A continuación se presentan los comandos necesarios para construir las imágene
    ```bash
    docker build -t subasta-back ./SpringSubastAll
    docker build -t subasta-frontend ./fronted_subastall
+
    docker swarm init
    docker stack deploy --compose-file docker-compose.yml subasta-stack
-   docker swarm init
-
+   
+   docker service scale subasta-stack_back=3 #puede fallar pero es cuestion de reintentar
 ### Notas:
 2. **Comandos Docker:** Los comandos proporcionados están listos para ser utilizados. Si tienes algún ajuste en la estructura de tu proyecto, puedes modificar las rutas o los nombres de los servicios.
